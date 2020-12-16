@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="781.0" style="-fx-background-color: #FBF9F9;" xmlns="http://javafx.com/javafx/10.0.2-internal" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+   <children>
+      <VBox layoutX="8.0" layoutY="7.0" prefHeight="494.0" prefWidth="400.0" style="-fx-background-color: #8F031E;">
+         <effect>
+            <DropShadow height="4.32" radius="5.83" />
+         </effect>
+         <opaqueInsets>
+            <Insets />
+         </opaqueInsets>
+      </VBox>
+      <ImageView fitHeight="55.0" fitWidth="87.0" layoutX="686.0" layoutY="422.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../../Downloads/madChef.jpg" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txt_mail" layoutX="434.0" layoutY="82.0" prefHeight="35.0" prefWidth="286.0" promptText="Email" />
+      <TextField fx:id="txt_pass" layoutX="434.0" layoutY="150.0" prefHeight="35.0" prefWidth="286.0" promptText="Password" />
+      <Button layoutX="533.0" layoutY="267.0" mnemonicParsing="false" onAction="#btn_Login" prefHeight="35.0" prefWidth="87.0" style="-fx-background-color: #8F031E;" text="Log In" textFill="#fffdfd" />
+      <Label fx:id="errorLbl" alignment="CENTER" contentDisplay="CENTER" layoutX="511.0" layoutY="333.0" prefHeight="35.0" prefWidth="130.0" text="Invalid" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS" />
+   </children>
+</AnchorPane>
