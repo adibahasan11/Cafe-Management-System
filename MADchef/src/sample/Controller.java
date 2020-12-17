@@ -29,6 +29,9 @@ public class Controller {
     ConnectionClass connectionClass = new ConnectionClass();
     Connection connection = connectionClass.getConnection();
 
+    String sqlQuery= "select admin_mail, admin_pass from admin";
+
+
     public void btn_Login(ActionEvent event) throws SQLException, IOException {
 
         String adminMail = txt_mail.getText();
@@ -37,39 +40,42 @@ public class Controller {
 
         if (adminMail.isEmpty()== false && adminPass.isEmpty()==false) {
 
-            validateLogin(event);
+            validateLogin(adminMail ,adminPass,event);
         }
          else
         {
-            setLblError(Color.TOMATO,"Failed");
+            setLblError(Color.TOMATO,"Not enough information provided");
         }
         }
 
-        private void validateLogin(ActionEvent event)
+        private void validateLogin(String mail,String password,ActionEvent event)
         {
-            String sqlQuery= "Select count(1) FROM admin WHERE admin_mail = '" + txt_mail.getText() + "' AND admin_pass = '" + txt_pass.getText()+"'";
-
             try {
                 Statement statement= connection.createStatement();
                 ResultSet rs = statement.executeQuery(sqlQuery);
 
-                while (rs.next()) {
+                    while (rs.next()) {
 
-                    System.out.println(rs.getInt(1));
+                        String email = rs.getString("admin_mail");
+                        String pass = rs.getString("admin_pass");
+                        System.out.print(email);
+                        System.out.print(pass);
 
-                    String mail = rs.getString("admin_mail");
-                    System.out.println(mail);
+                        if (email.equals(mail) && pass.equals(password)) {
+                            setLblError(Color.GREEN, "Congrates!");
+                            changeScene(event);
+                        }
+                        else {
 
-                    if (mail.equals(txt_mail.getText())) {
-                        setLblError(Color.GREEN,"Congrates!");
-                        //changeScene(event);
-                    } else {
-
-                        setLblError(Color.TOMATO,"Invalid");
+                            setLblError(Color.TOMATO, "Invalid mail or password");
+                        }
                     }
-                }
 
-            } catch (Exception e) {
+            }catch (SQLException e)
+            {
+                System.out.print(e);
+            }
+            catch (Exception e) {
                 e.printStackTrace();
             }
         }
@@ -79,7 +85,7 @@ public class Controller {
 
 
         Parent HomePage = FXMLLoader.load(getClass().getResource("HomePage.fxml"));
-        Scene HomeScene = new Scene(HomePage);
+        Scene HomeScene = new Scene(HomePage,900,530);
 
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(HomeScene);
