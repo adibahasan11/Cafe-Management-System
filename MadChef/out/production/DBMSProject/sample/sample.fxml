@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
 <?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
 
 <GridPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
     <columnConstraints>
@@ -17,31 +21,67 @@
         <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
     </rowConstraints>
     <children>
-        <Accordion minHeight="300.0" prefHeight="400.0" prefWidth="150.0" style="-fx-border-color: gray; -fx-background-color: #8F031E;" GridPane.rowIndex="2" GridPane.rowSpan="3">
+        <Accordion minHeight="300.0" prefHeight="400.0" prefWidth="150.0" style="-fx-border-color: gray; -fx-background-color: #3D4956;" GridPane.rowIndex="2" GridPane.rowSpan="3">
             <panes>
-                <TitledPane animated="false" expanded="false" style="-fx-background-color: #8F031E;" text="Staffs">
+                <TitledPane style="-fx-background-color: #3D4956;" text="Staffs">
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #8F031E;">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="200.0" style="-fx-background-color: #3D4956;">
                             <children>
-                                <Button fx:id="btn1" layoutX="-1.0" layoutY="21.0" mnemonicParsing="false" onAction="#addStaff" prefHeight="26.0" prefWidth="200.0" style="-fx-border-color: white; -fx-background-color: #8F031E;" text="Add Staff" textAlignment="CENTER" textFill="WHITE" />
-                                <Button layoutX="-1.0" layoutY="47.0" mnemonicParsing="false" onAction="#editStaff" prefHeight="26.0" prefWidth="200.0" style="-fx-border-color: white; -fx-background-color: #8F031E;" text="Edit/Delete Staff" textAlignment="CENTER" textFill="WHITE" />
+                                <Button fx:id="btn1" alignment="CENTER" contentDisplay="CENTER" layoutX="-29.0" layoutY="14.0" mnemonicParsing="false" onAction="#addStaff" prefHeight="44.0" prefWidth="260.0" style="-fx-border-color: white; -fx-background-color: #3D4956;" text="Add Staff" textAlignment="CENTER" textFill="WHITE">
+                           <padding>
+                              <Insets bottom="1.0" />
+                           </padding></Button>
+                                <Button alignment="CENTER" contentDisplay="CENTER" layoutX="-29.0" layoutY="58.0" mnemonicParsing="false" onAction="#editStaff" prefHeight="44.0" prefWidth="260.0" style="-fx-border-color: white; -fx-background-color: #3D4956;" text="Edit/Delete Staff" textAlignment="CENTER" textFill="WHITE">
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor></Button>
                             </children></AnchorPane>
                     </content>
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/3085418-200.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
                 </TitledPane>
-                <TitledPane animated="false" style="-fx-background-color: #8F031E;" text="Menu">
+                <TitledPane style="-fx-background-color: #3D4956;" text="Menu">
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="150.0" style="-fx-background-color: #8F031E;">
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="180.0" prefWidth="150.0" style="-fx-background-color: #3D4956;">
                             <children>
-                                <Button layoutX="-2.0" layoutY="14.0" mnemonicParsing="false" onAction="#viewMenu" prefHeight="26.0" prefWidth="200.0" style="-fx-border-color: white; -fx-background-color: #8F031E;" text="View Menu" textFill="WHITE" />
-                                <Button layoutX="-2.0" layoutY="40.0" mnemonicParsing="false" onAction="#editMenu" prefHeight="26.0" prefWidth="200.0" style="-fx-border-color: white; -fx-background-color: #8F031E;" text="Edit Menu" textFill="WHITE" />
-                                <Button layoutX="-2.0" layoutY="66.0" mnemonicParsing="false" onAction="#takeOrder" prefHeight="26.0" prefWidth="200.0" style="-fx-border-color: white; -fx-background-color: #8F031E;" text="Take Order" textFill="WHITE" />
+                                <Button layoutX="-41.0" layoutY="27.0" mnemonicParsing="false" onAction="#viewMenu" prefHeight="44.0" prefWidth="282.0" style="-fx-border-color: white; -fx-background-color: #3D4956;" text="View Menu" textFill="WHITE" />
+                                <Button layoutX="-15.0" layoutY="71.0" mnemonicParsing="false" onAction="#editMenu" prefHeight="44.0" prefWidth="248.0" style="-fx-border-color: white; -fx-background-color: #3D4956;" text="Edit Menu" textFill="WHITE" />
+                                <Button layoutX="-28.0" layoutY="115.0" mnemonicParsing="false" onAction="#takeOrder" prefHeight="44.0" prefWidth="274.0" style="-fx-border-color: white; -fx-background-color: #3D4956;" text="Take Order" textFill="WHITE" />
                             </children></AnchorPane>
                     </content>
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/2070492-200.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
                 </TitledPane>
-                <TitledPane animated="false" onDragDetected="#editInfo" text="Edit Profile">
+                <TitledPane onDragDetected="#editInfo" text="Edit Profile">
                     <content>
-                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="265.0" prefWidth="298.0" style="-fx-background-color: #8F031E;" />
+                        <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="265.0" prefWidth="298.0" style="-fx-background-color: #3D4956;" />
                     </content>
+               <font>
+                  <Font size="20.0" />
+               </font>
+               <graphic>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../Images/1200911-200.png" />
+                     </image>
+                  </ImageView>
+               </graphic>
                 </TitledPane>
             </panes>
         </Accordion>
