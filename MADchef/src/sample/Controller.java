@@ -8,6 +8,7 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
@@ -21,7 +22,7 @@ public class Controller {
     TextField txt_mail;
 
     @FXML
-    TextField txt_pass;
+    PasswordField txt_pass;
 
     @FXML
     Label errorLbl;
