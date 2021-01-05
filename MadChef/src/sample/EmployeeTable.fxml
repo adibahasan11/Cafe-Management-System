@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="600.0" prefWidth="900.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.EmployeeTable">
+    <children>
+        <AnchorPane layoutY="-1.0" prefHeight="600.0" prefWidth="222.0" style="-fx-background-color: #800000;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <Button alignment="CENTER" layoutX="36.0" layoutY="321.0" mnemonicParsing="false" onAction="#AddEmployees" prefHeight="40.0" prefWidth="150.0" style="-fx-background-radius: 7; -fx-background-color: white;" text="    Add">
+               <font>
+                  <Font size="15.0" />
+               </font></Button>
+                <Button layoutX="36.0" layoutY="380.0" mnemonicParsing="false" onAction="#UpdateEmployees" prefHeight="40.0" prefWidth="150.0" style="-fx-background-radius: 7; -fx-background-color: white;" text="       Update">
+                    <font>
+                        <Font size="14.0" />
+                    </font>
+                </Button>
+                <Button layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onAction="#backButtonPress" prefHeight="14.0" prefWidth="60.0" style="-fx-background-color: f3f3f9;" text="Go Back" textFill="#8f031e" />
+                <Button alignment="CENTER" layoutX="36.0" layoutY="440.0" mnemonicParsing="false" onAction="#DeleteEmployees" prefHeight="40.0" prefWidth="150.0" style="-fx-background-radius: 7; -fx-background-color: white;" text="      Delete">
+               <font>
+                  <Font size="14.0" />
+               </font></Button>
+                <TextField fx:id="txt_name" layoutX="31.0" layoutY="77.0" prefHeight="30.0" prefWidth="160.0" promptText="Name" />
+                <TextField fx:id="txt_email" layoutX="31.0" layoutY="118.0" prefHeight="30.0" prefWidth="160.0" promptText="Email" />
+                <TextField fx:id="txt_M_id" layoutX="31.0" layoutY="162.0" prefHeight="30.0" prefWidth="160.0" promptText="Manager ID" />
+                <TextField fx:id="txt_designation" layoutX="31.0" layoutY="206.0" prefHeight="30.0" prefWidth="160.0" promptText="Designation" />
+                <TextField fx:id="txt_address" layoutX="31.0" layoutY="253.0" prefHeight="30.0" prefWidth="160.0" promptText="Address" />
+            <ImageView fitHeight="63.0" fitWidth="52.0" layoutX="48.0" layoutY="315.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/add+board+new+plus+icon-1320186882821780394.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="33.0" layoutX="59.0" layoutY="385.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/download.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="59.0" layoutY="445.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../Images/Trash_Bin_Remove_Recycle_Delete_Trashcan1_Can-512.png" />
+               </image>
+            </ImageView>
+            </children></AnchorPane>
+        <TableView fx:id="table_employees" layoutX="223.0" layoutY="30.0" prefHeight="570.0" prefWidth="677.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="223.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <columns>
+                <TableColumn fx:id="col_id" prefWidth="75.0" text="ID" />
+                <TableColumn fx:id="col_name" prefWidth="116.800048828125" text="Name" />
+                <TableColumn fx:id="col_email" prefWidth="101.60000610351562" text="Email" />
+                <TableColumn fx:id="col_date" prefWidth="78.800048828125" text="Joining Date" />
+                <TableColumn fx:id="col_designation" prefWidth="91.20001220703125" text="Designation" />
+                <TableColumn fx:id="col_salary" prefWidth="88.7999267578125" text="Salary" />
+                <TableColumn fx:id="col_address" prefWidth="127.99993896484375" text="Address" />
+            </columns>
+        </TableView>
+    </children>
+</AnchorPane>

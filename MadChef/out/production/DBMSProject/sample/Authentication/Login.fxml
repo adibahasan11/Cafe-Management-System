@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="781.0" style="-fx-background-color: #FBF9F9;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Authentication.LogInController">
+    <children>
+        <VBox layoutX="8.0" layoutY="7.0" prefHeight="494.0" prefWidth="400.0" style="-fx-background-color: #8F031E;">
+            <effect>
+                <DropShadow height="4.32" radius="5.83" />
+            </effect>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+        </VBox>
+        <ImageView fitHeight="55.0" fitWidth="87.0" layoutX="686.0" layoutY="422.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../Images/download.jpg" />
+            </image>
+        </ImageView>
+        <TextField fx:id="txt_mail" layoutX="434.0" layoutY="135.0" prefHeight="35.0" prefWidth="286.0" promptText="Email" />
+        <Button layoutX="533.0" layoutY="270.0" mnemonicParsing="false" onAction="#btn_Login" prefHeight="35.0" prefWidth="87.0" style="-fx-background-color: #8F031E;" text="Log In" textFill="#fffdfd">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+        <Button layoutX="512.0" layoutY="355.0" mnemonicParsing="false" onAction="#btn_Register" prefHeight="35.0" prefWidth="130.0" style="-fx-background-color: #8F031E;" text="Register As Employee" textFill="#fffdfd">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+        <Label fx:id="errorLbl" accessibleRole="PASSWORD_FIELD" alignment="CENTER" contentDisplay="CENTER" layoutX="473.0" layoutY="317.0" prefHeight="27.0" prefWidth="207.0" text="Enter your mail and password" textAlignment="JUSTIFY" textOverrun="CENTER_ELLIPSIS" />
+        <PasswordField fx:id="txt_pass" layoutX="434.0" layoutY="193.0" prefHeight="35.0" prefWidth="286.0" promptText="password" />
+      <Label layoutX="442.0" layoutY="72.0" prefHeight="27.0" prefWidth="62.0" text="Log In As" />
+      <ChoiceBox fx:id="role" layoutX="506.0" layoutY="68.0" prefHeight="38.0" prefWidth="207.0" />
+    </children>
+</AnchorPane>
