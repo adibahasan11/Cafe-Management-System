@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="508.0" prefWidth="781.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Employee.EmpProfileController">
+    <children>
+        <VBox layoutX="8.0" layoutY="7.0" prefHeight="494.0" prefWidth="400.0" style="-fx-background-color: #8F031E;">
+            <effect>
+                <DropShadow height="4.32" radius="5.83" />
+            </effect>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+        </VBox>
+        <Label layoutX="72.0" layoutY="152.0" prefHeight="27.0" prefWidth="70.0" text="Employee ID" textFill="WHITE" />
+        <Label layoutX="72.0" layoutY="172.0" prefHeight="27.0" prefWidth="70.0" text="Name" textFill="WHITE" />
+        <Label layoutX="72.0" layoutY="192.0" prefHeight="27.0" prefWidth="70.0" text="Email" textFill="WHITE" />
+        <Label layoutX="72.0" layoutY="212.0" prefHeight="27.0" prefWidth="70.0" text="Password" textFill="WHITE" />
+        <Label layoutX="72.0" layoutY="232.0" prefHeight="27.0" prefWidth="70.0" text="Address" textFill="WHITE" />
+        <Label layoutX="72.0" layoutY="252.0" prefHeight="27.0" prefWidth="70.0" text="Manager ID" textFill="WHITE" />
+        <Label layoutX="72.0" layoutY="272.0" prefHeight="27.0" prefWidth="70.0" text="Designation" textFill="WHITE" />
+        <Label layoutX="72.0" layoutY="292.0" prefHeight="27.0" prefWidth="70.0" text="Joining Date" textFill="WHITE" />
+
+        <Label fx:id="label_id" layoutX="192.0" layoutY="152.0" prefHeight="27.0" prefWidth="100.0" text="**" textFill="WHITE" />
+        <Label fx:id="label_name" layoutX="192.0" layoutY="172.0" prefHeight="27.0" prefWidth="100.0" text="**" textFill="WHITE" />
+        <Label fx:id="label_email" layoutX="192.0" layoutY="192.0" prefHeight="27.0" prefWidth="100.0" text="**" textFill="WHITE" />
+        <Label fx:id="label_pw" layoutX="192.0" layoutY="212.0" prefHeight="27.0" prefWidth="100.0" text="**" textFill="WHITE" />
+        <Label fx:id="label_address" layoutX="192.0" layoutY="232.0" prefHeight="27.0" prefWidth="100.0" text="**" textFill="WHITE" />
+        <Label fx:id="label_m_id" layoutX="192.0" layoutY="252.0" prefHeight="27.0" prefWidth="100.0" text="**" textFill="WHITE" />
+        <Label fx:id="label_designation" layoutX="192.0" layoutY="272.0" prefHeight="27.0" prefWidth="100.0" text="**" textFill="WHITE" />
+        <Label fx:id="label_j_date" layoutX="192.0" layoutY="292.0" prefHeight="27.0" prefWidth="150.0" text="**" textFill="WHITE" />
+
+        <Button layoutX="16.0" layoutY="16.0" mnemonicParsing="false" onAction="#backButtonPress" prefHeight="14.0" prefWidth="60.0" style="-fx-background-color: f3f3f9;" text="Go Back" textFill="#8f031e">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor></Button>
+        <ImageView fitHeight="55.0" fitWidth="87.0" layoutX="686.0" layoutY="422.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../Images/download.jpg" />
+            </image>
+        </ImageView>
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="112.0" layoutY="412.0" mnemonicParsing="false" onAction="#editInfo" prefHeight="24.0" prefWidth="153.0" style="-fx-background-color: white;" text="Edit Profile" textAlignment="CENTER" textFill="#8f031e">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor></Button>
+        <ImageView fitHeight="64.0" fitWidth="66.0" layoutX="72.0" layoutY="60.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../Images/people-02-512.png" />
+            </image>
+        </ImageView>
+        <Button layoutX="610.0" layoutY="435.0" mnemonicParsing="false" onAction="#showInfo" prefHeight="25.0" prefWidth="65.0" style="-fx-background-color: #8F031E;" text="Show" textFill="#fffdfd">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor></Button>
+      <Label layoutX="152.0" layoutY="75.0" prefHeight="27.0" prefWidth="104.0" text="Your Profile" textFill="WHITE">
+         <font>
+            <Font size="14.0" />
+         </font></Label>
+    </children>
+
+</AnchorPane>

@@ -1,5 +1,11 @@
 package Database;
 
+import sample.Admin.AdminProfileController;
+import sample.Admin.Controller;
+import sample.Admin.EmployeeTable;
+import sample.Employee.EmpHomePageController;
+import sample.Employee.EmpProfileController;
+
 import java.sql.*;
 public class Database {
         String JDBC_DRIVER = "oracle.jdbc.driver.OracleDriver";
@@ -9,6 +15,7 @@ public class Database {
 
     public boolean validateAdminLogin( String email, String pw ){
         try {
+            Controller controller = new Controller();
             Class.forName(JDBC_DRIVER);
             Connection con = DriverManager.getConnection(url, username, password);
             String selectQuery = "SELECT EMAIL, PASSWORD FROM ADMIN WHERE EMAIL = ? AND PASSWORD = ?";
@@ -19,6 +26,7 @@ public class Database {
             if (resultSet.next()) {
                 System.out.println("table is run");
                 System.out.println("Connection to database successful");
+                controller.passInfo(email);
                 return true;
             }
         } catch (SQLException e) {
@@ -31,6 +39,7 @@ public class Database {
 
     public boolean validateEmployeeLogin( String email, String pw ){
         try {
+            EmpHomePageController empHomePageController = new EmpHomePageController();
             Class.forName(JDBC_DRIVER);
             Connection con = DriverManager.getConnection(url, username, password);
             String selectQuery = "SELECT EMAIL, PASSWORD FROM EMPLOYEE_REGISTER WHERE EMAIL = ? AND PASSWORD = ?";
@@ -41,6 +50,7 @@ public class Database {
             if (resultSet.next()) {
                 System.out.println("table is run");
                 System.out.println("Connection to database successful");
+                empHomePageController.passInfo(email);
                 return true;
             }
         } catch (SQLException e) {
@@ -89,7 +99,6 @@ public class Database {
                 preparedStatement.setString(4, passwords);
                 preparedStatement.executeUpdate();
                 System.out.println("Employee Registered");
-
             }
             else
                 System.out.println("Employee Not in the system");
@@ -98,8 +107,105 @@ public class Database {
         } catch (ClassNotFoundException e) {
             System.out.println("Failed to register driver. Exception code: " + e);
         }
-        //return false;
         return true;
     }
+    public void takeOrder( String name ){
+        try {
+            Class.forName(JDBC_DRIVER);
+            Connection con = DriverManager.getConnection(url, username, password);
+            String insertQuery = "INSERT INTO ORDERS(ORDER_NAME) VALUES(?)";
+            PreparedStatement preparedStatement = con.prepareStatement(insertQuery);
+            preparedStatement.setString(1, name);
+            preparedStatement.executeUpdate();
+            System.out.println("Order Added");
+        } catch (SQLException e) {
+            System.out.println("Error while connecting to database. Exception code: " + e);
+        } catch (ClassNotFoundException e) {
+            System.out.println("Failed to register driver. Exception code: " + e);
+        }
+    }
+    public void viewEmpProfile(String email) {
+        try {
+            Class.forName(JDBC_DRIVER);
+            Connection con = DriverManager.getConnection(url, username, password);
+            String selectQuery = "select e.e_id, e.name, e.email, er.password, e.address, e.manager_id, e.designation, e.joining_date from employee e, employee_register er where e.email = ?";
+            PreparedStatement preparedStatement = con.prepareStatement(selectQuery);
+            preparedStatement.setString(1, email);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                System.out.println("Profile is viewed");
+                String E_ID = resultSet.getString(1);
+                String E_Name = resultSet.getString(2);
+                String E_Mail = resultSet.getString(3);
+                String E_PW = resultSet.getString(4);
+                String E_Address = resultSet.getString(5);
+                int E_M_ID = resultSet.getInt(6);
+                String E_Designation = resultSet.getString(7);
+                String E_Join_Date = resultSet.getString(8);
 
+                EmpProfileController employeeProfile = new EmpProfileController();
+                employeeProfile.getInfo(E_ID, E_Name, E_Mail, E_PW, E_Address, E_M_ID, E_Designation, E_Join_Date);
+
+                System.out.println(E_ID + E_Name + E_Mail + E_PW + E_Address + E_M_ID + E_Designation + E_Join_Date);
+                System.out.println("Connection to database successful");
+
+            }
+        } catch (SQLException e) {
+            System.out.println("Error while connecting to database. Exception code: " + e);
+        } catch (ClassNotFoundException e) {
+            System.out.println("Failed to register driver. Exception code: " + e);
+        }
+    }
+    public void viewAdminProfile(String email) {
+        try {
+            Class.forName(JDBC_DRIVER);
+            Connection con = DriverManager.getConnection(url, username, password);
+            String selectQuery = "select * from Admin where email = ?";
+            PreparedStatement preparedStatement = con.prepareStatement(selectQuery);
+            preparedStatement.setString(1, email);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                System.out.println("Profile is viewed");
+                String E_ID = resultSet.getString(1);
+                String E_Name = resultSet.getString(2);
+                String E_Mail = resultSet.getString(3);
+                String E_PW = resultSet.getString(4);
+
+                AdminProfileController adminProfile = new AdminProfileController();
+                adminProfile.getInfo(E_ID, E_Name, E_Mail, E_PW);
+
+                System.out.println(E_ID + E_Name + E_Mail + E_PW);
+                System.out.println("Connection to database successful");
+
+            }
+        } catch (SQLException e) {
+            System.out.println("Error while connecting to database. Exception code: " + e);
+        } catch (ClassNotFoundException e) {
+            System.out.println("Failed to register driver. Exception code: " + e);
+        }
+    }
+
+    public void ViewMenu() {
+        try {
+            Class.forName(JDBC_DRIVER);
+            Connection con = DriverManager.getConnection(url, username, password);
+            String selectQuery = "SELECT ITEM_NAME, CATEGORY_NAME, PRICE FROM MENU m, CATEGORY c where m.CATEGORY_ID = c.CATEGORY_ID";
+            PreparedStatement preparedStatement = con.prepareStatement(selectQuery);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            System.out.println("Connection to database successful");
+            while (resultSet.next()) {
+                System.out.println("Menu is viewed");
+                String Item_Name = resultSet.getString(1);
+                String Category_Name = resultSet.getString(2);
+                int Price = resultSet.getInt(3);
+
+                System.out.println(Item_Name + " " + Category_Name + " " + Price);
+
+            }
+        } catch (SQLException e) {
+            System.out.println("Error while connecting to database. Exception code: " + e);
+        } catch (ClassNotFoundException e) {
+            System.out.println("Failed to register driver. Exception code: " + e);
+        }
+    }
 }

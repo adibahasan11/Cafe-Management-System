@@ -47,7 +47,7 @@ public class LogInController {
                 boolean success = database.validateAdminLogin(adminMail, adminPass);
                 if (success) {
                     setLblError(Color.GREEN, "Congratulations!");
-                    changeScene(event);
+                    changeSceneForAdmin(event);
                 } else {
                     setLblError(Color.TOMATO, "Invalid mail or password");
                 }
@@ -56,7 +56,7 @@ public class LogInController {
                 boolean success = database.validateEmployeeLogin(adminMail, adminPass);
                 if (success) {
                     setLblError(Color.GREEN, "Congratulations!");
-                    changeScene(event);
+                    changeSceneForEmp(event);
                 } else {
                     setLblError(Color.TOMATO, "Invalid mail or password");
                 }
@@ -70,18 +70,26 @@ public class LogInController {
     private void setLblError(Color color, String text) {
         errorLbl.setTextFill(color);
         errorLbl.setText(text);
-        //System.out.println("Not enough information provided");
     }
 
-    private void changeScene(ActionEvent event) throws IOException {
-        Parent HomePage = FXMLLoader.load(getClass().getResource("../AdminHomePage.fxml"));
+    private void changeSceneForAdmin(ActionEvent event) throws IOException {
+        Parent HomePage = FXMLLoader.load(getClass().getResource("../Admin/AdminHomePage.fxml"));
         Scene HomeScene = new Scene(HomePage,781,508);
 
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
         window.setScene(HomeScene);
         window.show();
-
     }
+
+    private void changeSceneForEmp(ActionEvent event) throws IOException {
+        Parent HomePage = FXMLLoader.load(getClass().getResource("../Employee/EmpHomePage.fxml"));
+        Scene HomeScene = new Scene(HomePage,781,508);
+
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(HomeScene);
+        window.show();
+    }
+
     public void btn_Register(ActionEvent event) throws IOException {
         Parent HomePage = FXMLLoader.load(getClass().getResource("Register.fxml"));
         Scene HomeScene = new Scene(HomePage,781,508);

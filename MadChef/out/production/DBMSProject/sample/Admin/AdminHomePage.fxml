@@ -7,7 +7,7 @@
 <?import javafx.scene.image.*?>
 <?import javafx.scene.layout.*?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="781.0" style="-fx-background-color: #FBF9F9;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Controller">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="508.0" prefWidth="781.0" style="-fx-background-color: #FBF9F9;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Admin.Controller">
     <children>
         <VBox layoutX="8.0" layoutY="7.0" prefHeight="494.0" prefWidth="400.0" style="-fx-background-color: #8F031E;">
             <effect>
@@ -19,7 +19,7 @@
         </VBox>
         <ImageView fitHeight="55.0" fitWidth="87.0" layoutX="686.0" layoutY="422.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../Images/download.jpg" />
+                <Image url="@../../Images/download.jpg" />
             </image>
         </ImageView>
         <Button fx:id="btn1" alignment="CENTER" contentDisplay="CENTER" layoutX="112.0" layoutY="111.0" mnemonicParsing="false" onAction="#addStaff" prefHeight="44.0" prefWidth="153.0" style="-fx-background-color: white;" text="         Add Staff" textAlignment="CENTER" textFill="#8f031e">
@@ -29,39 +29,39 @@
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="112.0" layoutY="179.0" mnemonicParsing="false" onAction="#editStaff" prefHeight="44.0" prefWidth="153.0" style="-fx-background-color: white;" text="           Take Order" textAlignment="CENTER" textFill="#8f031e">
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="112.0" layoutY="179.0" mnemonicParsing="false" onAction="#takeOrder" prefHeight="44.0" prefWidth="153.0" style="-fx-background-color: white;" text="           Take Order" textAlignment="CENTER" textFill="#8f031e">
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor></Button>
         <ImageView fitHeight="44.0" fitWidth="37.0" layoutX="124.0" layoutY="115.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../Images/addemployee.jpg" />
+                <Image url="@../../Images/addemployee.jpg" />
             </image>
         </ImageView>
         <ImageView fitHeight="33.0" fitWidth="47.0" layoutX="126.0" layoutY="185.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../Images/TakingOrder.png" />
+                <Image url="@../../Images/TakingOrder.png" />
             </image>
         </ImageView>
-        <Button fx:id="btn2" alignment="CENTER" contentDisplay="CENTER" layoutX="112.0" layoutY="247.0" mnemonicParsing="false" onAction="#addStaff" prefHeight="44.0" prefWidth="153.0" style="-fx-background-color: white;" text="         Menu" textAlignment="CENTER" textFill="#8f031e">
+        <Button fx:id="btn2" alignment="CENTER" contentDisplay="CENTER" layoutX="112.0" layoutY="247.0" mnemonicParsing="false" onAction="#viewMenu" prefHeight="44.0" prefWidth="153.0" style="-fx-background-color: white;" text="         Menu" textAlignment="CENTER" textFill="#8f031e">
             <padding>
                 <Insets bottom="1.0" />
             </padding>
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor></Button>
-        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="112.0" layoutY="315.0" mnemonicParsing="false" onAction="#editStaff" prefHeight="44.0" prefWidth="153.0" style="-fx-background-color: white;" text="           Profile" textAlignment="CENTER" textFill="#8f031e">
+        <Button alignment="CENTER" contentDisplay="CENTER" layoutX="112.0" layoutY="315.0" mnemonicParsing="false" onAction="#editInfo" prefHeight="44.0" prefWidth="153.0" style="-fx-background-color: white;" text="           Profile" textAlignment="CENTER" textFill="#8f031e">
             <cursor>
                 <Cursor fx:constant="HAND" />
             </cursor></Button>
         <ImageView fitHeight="44.0" fitWidth="37.0" layoutX="124.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../Images/Menu.png" />
+                <Image url="@../../Images/Menu.png" />
             </image>
         </ImageView>
         <ImageView fitHeight="33.0" fitWidth="47.0" layoutX="126.0" layoutY="321.0" pickOnBounds="true" preserveRatio="true">
             <image>
-                <Image url="@../Images/images.png" />
+                <Image url="@../../Images/images.png" />
             </image>
         </ImageView>
         <Button layoutX="610.0" layoutY="435.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="25.0" prefWidth="65.0" style="-fx-background-color: #8F031E;" text="Log Out" textFill="#fffdfd">

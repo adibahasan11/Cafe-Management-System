@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="508.0" prefWidth="781.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Orders.AdminTakeOrder">
+    <children>
+        <VBox layoutX="8.0" layoutY="7.0" prefHeight="494.0" prefWidth="400.0" style="-fx-background-color: #8F031E;">
+            <effect>
+                <DropShadow height="4.32" radius="5.83" />
+            </effect>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+        </VBox>
+        <Button layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onAction="#backButtonPress" prefHeight="14.0" prefWidth="60.0" style="-fx-background-color: f3f3f9;" text="Go Back" textFill="#8f031e">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+        <ImageView fitHeight="55.0" fitWidth="87.0" layoutX="686.0" layoutY="422.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../Images/download.jpg" />
+            </image>
+        </ImageView>
+        <TextField fx:id="txt_o_name" layoutX="433.0" layoutY="218.0" prefHeight="35.0" prefWidth="286.0" promptText="Name" />
+        <Button layoutX="533.0" layoutY="327.0" mnemonicParsing="false" onAction="#TakingOrder" prefHeight="35.0" prefWidth="87.0" style="-fx-background-color: #8F031E;" text="Take Order" textFill="#fffdfd">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor></Button>
+        <Label layoutX="433.0" layoutY="180.0" prefHeight="27.0" prefWidth="76.0" text="Order Name" />
+    </children>
+
+</AnchorPane>
