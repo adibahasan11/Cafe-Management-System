@@ -20,7 +20,7 @@ public class EmpTakeOrder {
 
     public void TakingOrder(ActionEvent event) throws IOException {
         String OrderName = txt_o_name.getText();
-        database.takeOrder( OrderName );
+        //database.takeOrder( OrderName );
         changeScene(event);
     }
 

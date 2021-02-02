@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.*?>
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane prefHeight="508.0" prefWidth="781.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Orders.Bill">
+    <children>
+        <VBox layoutX="8.0" layoutY="7.0" prefHeight="494.0" prefWidth="400.0" style="-fx-background-color: #8F031E;">
+            <effect>
+                <DropShadow height="4.32" radius="5.83" />
+            </effect>
+            <opaqueInsets>
+                <Insets />
+            </opaqueInsets>
+        </VBox>
+        <Button layoutX="14.0" layoutY="22.0" mnemonicParsing="false" onAction="#backButtonPress" prefHeight="14.0" prefWidth="60.0" style="-fx-background-color: f3f3f9;" text="Go Back" textFill="#8f031e">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor></Button>
+        <ImageView fitHeight="55.0" fitWidth="87.0" layoutX="686.0" layoutY="422.0" pickOnBounds="true" preserveRatio="true">
+            <image>
+                <Image url="@../../Images/download.jpg" />
+            </image>
+        </ImageView>
+
+        <Label fx:id="txt_b_id" layoutX="493.0" layoutY="150.0" prefHeight="27.0" prefWidth="100.0" text="Bill ID" textFill="#8f031e" />
+        <Label fx:id="txt_o_id" layoutX="493.0" layoutY="180.0" prefHeight="27.0" prefWidth="100.0" text="Order ID" textFill="#8f031e" />
+        <Label fx:id="txt_amount" layoutX="493.0" layoutY="210.0" prefHeight="27.0" prefWidth="100.0" text="Total Bill" textFill="#8f031e">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+
+        <Label fx:id="txt_b_id1" layoutX="633.0" layoutY="150.0" prefHeight="27.0" prefWidth="100.0" text="***" textFill="#8f031e" />
+        <Label fx:id="txt_o_id1" layoutX="633.0" layoutY="180.0" prefHeight="27.0" prefWidth="100.0" text="***" textFill="#8f031e" />
+        <Label fx:id="txt_amount1" layoutX="633.0" layoutY="210.0" prefHeight="27.0" prefWidth="100.0" text="***" textFill="#8f031e">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Label>
+
+        <Button layoutX="533.0" layoutY="280.0" mnemonicParsing="false" onAction="#generateBill" prefHeight="35.0" prefWidth="87.0" style="-fx-background-color: #8F031E;" text="Final Bill" textFill="#fffdfd">
+            <cursor>
+                <Cursor fx:constant="HAND" />
+            </cursor></Button>
+        <!--<Label layoutX="433.0" layoutY="180.0" prefHeight="27.0" prefWidth="76.0" text="Order Name" />-->
+    </children>
+
+</AnchorPane>

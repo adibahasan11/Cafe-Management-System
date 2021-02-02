@@ -13,6 +13,7 @@ import java.io.IOException;
 
 public class Controller {
     public static String mail;
+    Database database = new Database();
 
     public void addStaff(ActionEvent event) throws IOException {
         Parent HomePage = FXMLLoader.load(getClass().getResource("EmployeeTable.fxml"));
@@ -23,7 +24,8 @@ public class Controller {
         window.show();
     }
     public void takeOrder(ActionEvent event) throws IOException {
-        Parent HomePage = FXMLLoader.load(getClass().getResource("../Orders/AdminTakeOrder.fxml"));
+        database.takeOrder();
+        Parent HomePage = FXMLLoader.load(getClass().getResource("../Orders/PlaceOrder.fxml"));
         Scene HomeScene = new Scene(HomePage,781,508);
 
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
@@ -46,6 +48,8 @@ public class Controller {
 
         Database database = new Database();
         database.viewAdminProfile(mail);
+        AdminProfileController adminProfileController = new AdminProfileController();
+        adminProfileController.showInfo();
     }
 
     public void LogOut(ActionEvent event)throws IOException {

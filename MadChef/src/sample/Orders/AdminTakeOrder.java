@@ -20,12 +20,12 @@ public class AdminTakeOrder {
 
     public void TakingOrder(ActionEvent event) throws IOException {
         String OrderName = txt_o_name.getText();
-        database.takeOrder( OrderName );
+        //database.takeOrder( OrderName );
         changeScene(event);
     }
 
     private void changeScene(ActionEvent event) throws IOException {
-        Parent HomePage = FXMLLoader.load(getClass().getResource("../Admin/AdminHomePage.fxml"));
+        Parent HomePage = FXMLLoader.load(getClass().getResource("../Orders/PlaceOrder.fxml"));
         Scene HomeScene = new Scene(HomePage,781,508);
 
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();

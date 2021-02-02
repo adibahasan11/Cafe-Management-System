@@ -5,6 +5,8 @@ import sample.Admin.Controller;
 import sample.Admin.EmployeeTable;
 import sample.Employee.EmpHomePageController;
 import sample.Employee.EmpProfileController;
+import sample.Orders.Bill;
+import sample.Orders.PlaceOrder;
 
 import java.sql.*;
 public class Database {
@@ -109,14 +111,15 @@ public class Database {
         }
         return true;
     }
-    public void takeOrder( String name ){
+    public void takeOrder(){
         try {
             Class.forName(JDBC_DRIVER);
             Connection con = DriverManager.getConnection(url, username, password);
-            String insertQuery = "INSERT INTO ORDERS(ORDER_NAME) VALUES(?)";
-            PreparedStatement preparedStatement = con.prepareStatement(insertQuery);
-            preparedStatement.setString(1, name);
-            preparedStatement.executeUpdate();
+            String insertQuery = "INSERT INTO ORDERS(O_DATE) VALUES(sysdate)";
+            Statement preparedStatement = con.createStatement();
+            //preparedStatement.setObject(1, new java.sql.Date());
+            preparedStatement.executeUpdate(insertQuery);
+
             System.out.println("Order Added");
         } catch (SQLException e) {
             System.out.println("Error while connecting to database. Exception code: " + e);
@@ -201,6 +204,71 @@ public class Database {
 
                 System.out.println(Item_Name + " " + Category_Name + " " + Price);
 
+            }
+        } catch (SQLException e) {
+            System.out.println("Error while connecting to database. Exception code: " + e);
+        } catch (ClassNotFoundException e) {
+            System.out.println("Failed to register driver. Exception code: " + e);
+        }
+    }
+    public void placeOrder( int order, int item, int quantity ){
+        try {
+            Class.forName(JDBC_DRIVER);
+            Connection con = DriverManager.getConnection(url, username, password);
+            String insertQuery = "INSERT INTO ORDER_FROM_MENU(ORDER_ID, ITEM_ID, QUANTITY) VALUES(?, ?, ?)";
+            PreparedStatement preparedStatement = con.prepareStatement(insertQuery);
+            preparedStatement.setInt(1, order);
+            preparedStatement.setInt(2, item);
+            preparedStatement.setInt(3, quantity);
+            preparedStatement.executeUpdate();
+            System.out.println("Order Placed");
+            Bill bill = new Bill();
+            bill.getOrderID(order);
+        } catch (SQLException e) {
+            System.out.println("Error while connecting to database. Exception code: " + e);
+        } catch (ClassNotFoundException e) {
+            System.out.println("Failed to register driver. Exception code: " + e);
+        }
+    }
+    public int getID(){
+        try {
+            Class.forName(JDBC_DRIVER);
+            Connection con = DriverManager.getConnection(url, username, password);
+            String selectQuery = "SELECT MAX(ORDER_ID) FROM ORDERS";
+            Statement preparedStatement = con.createStatement();
+            ResultSet resultSet = preparedStatement.executeQuery(selectQuery);
+            if (resultSet.next()) {
+                System.out.println("Order is viewed");
+                int O_ID = resultSet.getInt(1);
+                System.out.println(O_ID);
+                System.out.println("Connection to database successful");
+                return O_ID;
+            }
+        } catch (SQLException e) {
+            System.out.println("Error while connecting to database. Exception code: " + e);
+        } catch (ClassNotFoundException e) {
+            System.out.println("Failed to register driver. Exception code: " + e);
+        }
+        return 0;
+    }
+    public void getBill (int order_id) {
+        try {
+            Class.forName(JDBC_DRIVER);
+            Connection con = DriverManager.getConnection(url, username, password);
+            String selectQuery = "select bill_id, amount from bill where order_id = ?";
+            PreparedStatement preparedStatement = con.prepareStatement(selectQuery);
+            preparedStatement.setInt(1, order_id);
+            ResultSet resultSet = preparedStatement.executeQuery();
+            while (resultSet.next()) {
+                System.out.println("Order from menu is viewed");
+                int Bill_ID = resultSet.getInt(1);
+                int TotalBill = resultSet.getInt(2);
+
+                Bill bill = new Bill();
+                bill.getBillInfo(order_id, Bill_ID, TotalBill);
+
+                System.out.println("Order Id: " + order_id + " Id: " + Bill_ID + " Amount: " + TotalBill);
+                System.out.println("Connection to database successful");
             }
         } catch (SQLException e) {
             System.out.println("Error while connecting to database. Exception code: " + e);
