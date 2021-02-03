@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 import java.io.IOException;
 
 
-public class Controller {
+public class AdminHomePage {
     public static String mail;
     Database database = new Database();
 
@@ -34,7 +34,17 @@ public class Controller {
     }
 
     public void viewMenu(ActionEvent event){
+        Database database = new Database();
+        database.ViewMenu();
+
+//        Parent HomePage = FXMLLoader.load(getClass().getResource("../Menu/Menu.fxml"));
+//        Scene HomeScene = new Scene(HomePage,781,508);
+//
+//        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+//        window.setScene(HomeScene);
+//        window.show();
     }
+
     public void passInfo(String email){
         mail = email;
     }

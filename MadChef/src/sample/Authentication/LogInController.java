@@ -12,6 +12,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.paint.Color;
 import javafx.stage.Stage;
+import sample.Orders.Orders;
 
 import java.io.IOException;
 
@@ -41,6 +42,8 @@ public class LogInController {
         String adminMail = txt_mail.getText();
         String adminPass = txt_pass.getText();
         String Role = (String) role.getValue();
+        Orders orders = new Orders();
+        orders.setRole(Role);
 
         if (!adminMail.isEmpty() && !adminPass.isEmpty()) {
             if ( Role.equals("Admin")){

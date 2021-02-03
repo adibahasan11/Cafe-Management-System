@@ -11,7 +11,7 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class Bill {
+public class Bill extends Orders{
     public static int O_ID;
     public static int bill_ID;
     public static int Bill;
@@ -35,12 +35,22 @@ public class Bill {
     }
 
     public void backButtonPress(ActionEvent event) throws IOException {
-        Parent HomePage = FXMLLoader.load(getClass().getResource("../Admin/AdminHomePage.fxml"));
-        Scene HomeScene = new Scene(HomePage,781,508);
+        if (role.equals("Admin")) {
+            Parent HomePage = FXMLLoader.load(getClass().getResource("../Admin/AdminHomePage.fxml"));
+            Scene HomeScene = new Scene(HomePage, 781, 508);
 
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(HomeScene);
-        window.show();
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(HomeScene);
+            window.show();
+        }
+        else {
+            Parent HomePage = FXMLLoader.load(getClass().getResource("../Employee/EmpHomePage.fxml"));
+            Scene HomeScene = new Scene(HomePage, 781, 508);
+
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(HomeScene);
+            window.show();
+        }
     }
     public void getBillInfo(int order_id, int Bill_ID, int price){
         O_ID = order_id;

@@ -1,14 +1,13 @@
 package Database;
 
 import sample.Admin.AdminProfileController;
-import sample.Admin.Controller;
-import sample.Admin.EmployeeTable;
+import sample.Admin.AdminHomePage;
 import sample.Employee.EmpHomePageController;
 import sample.Employee.EmpProfileController;
 import sample.Orders.Bill;
-import sample.Orders.PlaceOrder;
 
 import java.sql.*;
+
 public class Database {
         String JDBC_DRIVER = "oracle.jdbc.driver.OracleDriver";
         String username = "system";
@@ -17,7 +16,7 @@ public class Database {
 
     public boolean validateAdminLogin( String email, String pw ){
         try {
-            Controller controller = new Controller();
+            AdminHomePage controller = new AdminHomePage();
             Class.forName(JDBC_DRIVER);
             Connection con = DriverManager.getConnection(url, username, password);
             String selectQuery = "SELECT EMAIL, PASSWORD FROM ADMIN WHERE EMAIL = ? AND PASSWORD = ?";

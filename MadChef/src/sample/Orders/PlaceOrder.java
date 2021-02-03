@@ -15,10 +15,10 @@ import java.io.IOException;
 
 import static java.lang.Integer.parseInt;
 
-public class PlaceOrder {
+public class PlaceOrder extends Orders{
 
     @FXML
-    Label txt_o_id;
+    TextField txt_o_id;
 
     @FXML
     TextField txt_item_id;
@@ -29,12 +29,22 @@ public class PlaceOrder {
     Database database = new Database();
 
     public void backButtonPress(ActionEvent event) throws IOException {
-        Parent HomePage = FXMLLoader.load(getClass().getResource("../Admin/AdminHomePage.fxml"));
-        Scene HomeScene = new Scene(HomePage,781,508);
+        if (role.equals("Admin")) {
+            Parent HomePage = FXMLLoader.load(getClass().getResource("../Admin/AdminHomePage.fxml"));
+            Scene HomeScene = new Scene(HomePage, 781, 508);
 
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(HomeScene);
-        window.show();
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(HomeScene);
+            window.show();
+        }
+        else if (role.equals("Employee")){
+            Parent HomePage = FXMLLoader.load(getClass().getResource("../Employee/EmpHomePage.fxml"));
+            Scene HomeScene = new Scene(HomePage, 781, 508);
+
+            Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+            window.setScene(HomeScene);
+            window.show();
+        }
     }
 
     public void PlaceFinalOrder(ActionEvent event) throws IOException {
@@ -43,13 +53,7 @@ public class PlaceOrder {
         int quantity = parseInt(txt_quantity.getText());
 
         database.placeOrder(order, item, quantity);
-
-        Parent HomePage = FXMLLoader.load(getClass().getResource("../Orders/Bill.fxml"));
-        Scene HomeScene = new Scene(HomePage,781,508);
-
-        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
-        window.setScene(HomeScene);
-        window.show();
+        changeScene(event);
     }
     public void PlaceMoreOrder() {
         int order = parseInt(txt_o_id.getText());
@@ -66,5 +70,13 @@ public class PlaceOrder {
             txt_o_id.setText(Integer.toString(id));
             System.out.println(id);
         }
+    }
+    private void changeScene(ActionEvent event) throws IOException {
+        Parent HomePage = FXMLLoader.load(getClass().getResource("../Orders/Bill.fxml"));
+        Scene HomeScene = new Scene(HomePage,781,508);
+
+        Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
+        window.setScene(HomeScene);
+        window.show();
     }
 }

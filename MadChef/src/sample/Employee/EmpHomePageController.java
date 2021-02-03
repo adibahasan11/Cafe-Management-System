@@ -12,9 +12,12 @@ import java.io.IOException;
 
 public class EmpHomePageController {
     public static String mail;
+    Database database = new Database();
 
     public void takeOrder(ActionEvent event) throws IOException {
-        Parent HomePage = FXMLLoader.load(getClass().getResource("../Orders/EmpTakeOrder.fxml"));
+        database.takeOrder();
+
+        Parent HomePage = FXMLLoader.load(getClass().getResource("../Orders/PlaceOrder.fxml"));
         Scene HomeScene = new Scene(HomePage,781,508);
 
         Stage window = (Stage) ((Node) event.getSource()).getScene().getWindow();
