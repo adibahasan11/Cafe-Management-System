@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1200.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Admin.AdminHomepage">
+   <children>
+      <ImageView fitHeight="680.0" fitWidth="1200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Images/Home.png" />
+         </image>
+      </ImageView>
+      <Button fx:id="addStaff" layoutX="775.0" layoutY="24.0" mnemonicParsing="false" onAction="#addStaff" prefHeight="26.0" prefWidth="104.0" style="-fx-background-color: #000000;" text="Add Staff" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="order" layoutX="617.0" layoutY="24.0" mnemonicParsing="false" onAction="#takeOrder" prefHeight="26.0" prefWidth="104.0" style="-fx-background-color: #000000;" text="Take Order" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="menu" layoutX="143.0" layoutY="503.0" mnemonicParsing="false" onAction="#viewMenu" prefHeight="38.0" prefWidth="168.0" style="-fx-background-color: #000000;" text="MENU" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </Button>
+      <Button fx:id="logOut" layoutX="1086.0" layoutY="24.0" mnemonicParsing="false" onAction="#LogOut" prefHeight="26.0" prefWidth="77.0" style="-fx-background-color: #800000;" text="Log out" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="profile" layoutX="950.0" layoutY="24.0" mnemonicParsing="false" onAction="#editInfo" prefHeight="26.0" prefWidth="77.0" style="-fx-background-color: #000000;" text="Profile" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="emp" layoutX="143.0" layoutY="192.0" mnemonicParsing="false" onAction="#empList" prefHeight="38.0" prefWidth="168.0" style="-fx-background-color: #000000;" text="EMPLOYEE LIST" textFill="WHITE">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+      <Button fx:id="orderList" layoutX="143.0" layoutY="352.0" mnemonicParsing="false" onAction="#orderList" prefHeight="38.0" prefWidth="168.0" style="-fx-background-color: #000000;" text="ORDER LIST" textFill="#fdfdfd">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+   </children>
+</AnchorPane>

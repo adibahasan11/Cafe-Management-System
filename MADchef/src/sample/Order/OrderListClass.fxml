@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="680.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Order.OrderListClass">
+   <children>
+      <TableView fx:id="order_table" layoutY="68.0" prefHeight="615.0" prefWidth="1200.0">
+        <columns>
+          <TableColumn fx:id="order_id" prefWidth="241.60000306367874" text="ORDER ID" />
+          <TableColumn fx:id="bill_id" prefWidth="289.59999084472656" text="BILL ID" />
+            <TableColumn fx:id="amount" prefWidth="315.20001220703125" text="AMOUNT" />
+            <TableColumn fx:id="bill_time" prefWidth="350.5999755859375" text="BILLING TIME" />
+        </columns>
+      </TableView>
+      <Button onAction="#DeleteItem" layoutX="1012.0" layoutY="27.0" mnemonicParsing="false" prefHeight="26.0" prefWidth="139.0" text="Cancel Order" />
+      <Button onAction="#backButton" layoutX="14.0" layoutY="15.0" mnemonicParsing="false" text="Back" />
+   </children>
+</AnchorPane>

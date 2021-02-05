@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.effect.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="830.0" prefWidth="1200.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Authentication.LoginClass">
+   <children>
+      <ImageView fitHeight="830.0" fitWidth="1200.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Images/FINALhOME.png" />
+         </image>
+      </ImageView>
+      <TextField fx:id="txt_mail" layoutX="504.0" layoutY="255.0" prefHeight="31.0" prefWidth="191.0" promptText="Email">
+         <effect>
+            <DropShadow height="1.93" radius="2.85" width="11.47" />
+         </effect></TextField>
+      <PasswordField fx:id="txt_pass" layoutX="504.0" layoutY="321.0" prefHeight="31.0" prefWidth="191.0" promptText="Password">
+         <effect>
+            <DropShadow height="4.54" radius="3.0175" width="9.53" />
+         </effect>
+      </PasswordField>
+      <Button fx:id="btn_Login" layoutX="617.0" layoutY="399.0" mnemonicParsing="false" onAction="#btn_Login" prefHeight="31.0" prefWidth="118.0" style="-fx-background-color: #8F031E;" text="Log In" textFill="WHITE">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+      <ChoiceBox fx:id="role" layoutX="567.0" layoutY="197.0" prefHeight="31.0" prefWidth="151.0" />
+      <Label  layoutX="480.0" layoutY="197.0" prefHeight="31.0" prefWidth="86.0" text="Login as :">
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font>
+      </Label>
+      <Label  fx:id="errorLbl" alignment="CENTER" layoutX="501.0" layoutY="466.0" prefHeight="18.0" prefWidth="198.0" text="Type Email &amp; Password" textFill="#575757" />
+      <Button fx:id="register" onAction="#EmpRegistration" layoutX="466.0" layoutY="399.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="118.0" style="-fx-background-color: #8F031E;" text="Register" textFill="WHITE" wrapText="true" />
+   </children>
+</AnchorPane>

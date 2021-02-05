@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1200.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Admin.AddEmployee">
+   <children>
+      <AnchorPane prefHeight="680.0" prefWidth="200.0" style="-fx-background-color: #000000;">
+         <children>
+            <Button fx:id="back" layoutX="12.0" layoutY="14.0" mnemonicParsing="false" onAction="#backButtonPress" prefHeight="15.0" prefWidth="62.0" style="-fx-background-color: #000000;" textFill="WHITE" />
+             <Button alignment="CENTER" layoutX="43.0" layoutY="347.0" mnemonicParsing="false" onAction="#AddEmployees" prefHeight="26.0" prefWidth="111.0" style="-fx-background-radius: 7; -fx-background-color: white;" text="    Add">
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor></Button>
+
+             <TextField fx:id="txt_name" layoutX="20.0" layoutY="109.0" prefHeight="30.0" prefWidth="160.0" promptText="Name">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
+             <TextField fx:id="txt_email" layoutX="20.0" layoutY="152.0" prefHeight="30.0" prefWidth="160.0" promptText="Email">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
+             <TextField fx:id="txt_M_id" layoutX="20.0" layoutY="195.0" prefHeight="30.0" prefWidth="160.0" promptText="Manager ID">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
+             <TextField fx:id="txt_designation" layoutX="20.0" layoutY="237.0" prefHeight="30.0" prefWidth="160.0" promptText="Designation">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
+             <TextField fx:id="txt_address" layoutX="20.0" layoutY="284.0" prefHeight="30.0" prefWidth="160.0" promptText="Address">
+               <cursor>
+                  <Cursor fx:constant="TEXT" />
+               </cursor></TextField>
+             <ImageView fitHeight="63.0" fitWidth="52.0" layoutX="36.0" layoutY="334.0" pickOnBounds="true" preserveRatio="true">
+                 <image>
+                     <Image url="@../../Images/add+board+new+plus+icon-1320186882821780394.png" />
+                 </image>
+             </ImageView>
+            <ImageView fitHeight="26.0" fitWidth="31.0" layoutX="23.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../Images/icons8-go-back-26 (2).png" />
+               </image>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </ImageView>
+         </children></AnchorPane>
+      <TableView fx:id="emp_table" layoutX="200.0" prefHeight="680.0" prefWidth="1000.0">
+        <columns>
+            <TableColumn fx:id="EmpId" prefWidth="99.39999389648438" text="Employee ID" />
+            <TableColumn fx:id="EmpName" prefWidth="119.19998168945312" text="Name" />
+            <TableColumn fx:id="EmpMail" prefWidth="166.40005493164062" text="Email" />
+            <TableColumn fx:id="EmpAddress" prefWidth="170.20001220703125" text="Address" />
+            <TableColumn fx:id="admin_id" prefWidth="115.39996337890625" text="Manager ID" />
+            <TableColumn fx:id="j_date" prefWidth="168.20001220703125" text="Joining Date" />
+            <TableColumn fx:id="EmpSalary" prefWidth="117.4000244140625" text="Salary" />
+        </columns>
+         <columnResizePolicy>
+            <TableView fx:constant="CONSTRAINED_RESIZE_POLICY" />
+         </columnResizePolicy>
+      </TableView>
+   </children>
+</AnchorPane>

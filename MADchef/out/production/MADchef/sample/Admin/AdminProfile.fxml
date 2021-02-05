@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1200.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Admin.AdminProfile">
+
+    <Label layoutX="426.0" layoutY="239.0" prefHeight="27.0" prefWidth="70.0" text="Your ID" textFill="WHITE" />
+    <Label layoutX="426.0" layoutY="322.0" prefHeight="27.0" prefWidth="70.0" text="Name" textFill="WHITE" />
+    <Label layoutX="426.0" layoutY="400.0" prefHeight="27.0" prefWidth="70.0" text="Email" textFill="WHITE" />
+    <Label layoutX="426.0" layoutY="476.0" prefHeight="27.0" prefWidth="70.0" text="Password" textFill="WHITE" />
+
+    <Label fx:id="label_id" layoutX="658.0" layoutY="239.0" prefHeight="27.0" prefWidth="100.0" text="**" textFill="WHITE" />
+    <Label fx:id="label_name" layoutX="658.0" layoutY="322.0" prefHeight="27.0" prefWidth="100.0" text="**" textFill="WHITE" />
+    <Label fx:id="label_email" layoutX="658.0" layoutY="400.0" prefHeight="27.0" prefWidth="100.0" text="**" textFill="WHITE" />
+    <Label fx:id="label_pw" layoutX="658.0" layoutY="476.0" prefHeight="27.0" prefWidth="100.0" text="**" textFill="WHITE" />
+
+    <Button layoutX="16.0" layoutY="16.0" mnemonicParsing="false" onAction="#backButtonPress" prefHeight="35.0" prefWidth="78.0" style="-fx-background-color: #000000;" textFill="#8f031e">
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor></Button>
+    <ImageView fitHeight="144.0" fitWidth="136.0" layoutX="970.0" layoutY="104.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@../../Images/people-02-512.png" />
+        </image>
+    </ImageView>
+    <Button layoutX="461.0" layoutY="617.0" mnemonicParsing="false" onAction="#showInfo" prefHeight="26.0" prefWidth="183.0" style="-fx-background-color: #8F031E;" text="Show" textFill="#fffdfd">
+        <cursor>
+            <Cursor fx:constant="HAND" />
+        </cursor></Button>
+    <Label layoutX="518.0" layoutY="113.0" prefHeight="27.0" prefWidth="213.0" text="Your Profile" textFill="WHITE">
+        </Label>
+   <ImageView fitHeight="27.0" fitWidth="29.0" layoutX="38.0" layoutY="16.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../../Images/icons8-go-back-26 (2).png" />
+      </image>
+   </ImageView>
+
+</AnchorPane>

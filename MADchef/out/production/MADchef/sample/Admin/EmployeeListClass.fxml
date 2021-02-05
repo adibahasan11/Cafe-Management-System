@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+
+<AnchorPane prefHeight="612.0" prefWidth="1200.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Admin.EmployeeListClass">
+    <Button alignment="CENTER" layoutX="753.0" layoutY="18.0" mnemonicParsing="false" onAction="#AddEmp" prefHeight="26.0" prefWidth="111.0" style="-fx-background-radius: 7; -fx-background-color: white;" text="    Add">
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor></Button>
+    <TableView fx:id="emp_table" layoutY="69.0" prefHeight="543.0" prefWidth="1200.0">
+        <columns>
+            <TableColumn fx:id="EmpId" prefWidth="129.3999908566475" text="Employee ID" />
+            <TableColumn fx:id="EmpName" prefWidth="138.59999084472656" text="Name" />
+            <TableColumn fx:id="EmpMail" prefWidth="215.0" text="Email" />
+            <TableColumn fx:id="EmpAddress" prefWidth="188.80001831054688" text="Address" />
+            <TableColumn fx:id="admin_id" prefWidth="172.79998779296875" text="Manager ID" />
+            <TableColumn fx:id="j_date" prefWidth="214.0" text="Joining Date" />
+         <TableColumn fx:id="EmpSalary" prefWidth="147.7999267578125" text="Salary" />
+        </columns>
+    </TableView>
+   <Button alignment="CENTER" contentDisplay="RIGHT" layoutX="1048.0" layoutY="18.0" mnemonicParsing="false" onAction="#deleteEmp" prefHeight="26.0" prefWidth="111.0" style="-fx-background-radius: 7; -fx-background-color: white;" text="Delete" textAlignment="RIGHT">
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor></Button>
+    <ImageView fitHeight="50.0" fitWidth="46.0" layoutX="753.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@../../Images/add+board+new+plus+icon-1320186882821780394.png" />
+        </image>
+    </ImageView>
+    <ImageView fitHeight="26.0" fitWidth="25.0" layoutX="1057.0" layoutY="19.0" pickOnBounds="true" preserveRatio="true">
+        <image>
+            <Image url="@../../Images/Trash_Bin_Remove_Recycle_Delete_Trashcan1_Can-512.png" />
+        </image>
+    </ImageView>
+   <Button fx:id="update" layoutX="898.0" layoutY="18.0" mnemonicParsing="false" onAction="#updateEmp" prefHeight="26.0" prefWidth="111.0" text="Update">
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor></Button>
+   <ImageView fitHeight="18.0" fitWidth="24.0" layoutX="906.0" layoutY="22.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../../Images/icons8-update-left-rotation-64.png" />
+      </image>
+   </ImageView>
+   <Button onAction="#backButton" layoutX="24.0" layoutY="13.0" mnemonicParsing="false" prefHeight="36.0" prefWidth="52.0" style="-fx-background-color: #000000;">
+      <cursor>
+         <Cursor fx:constant="HAND" />
+      </cursor></Button>
+   <ImageView fitHeight="26.0" fitWidth="31.0" layoutX="31.0" layoutY="18.0" pickOnBounds="true" preserveRatio="true">
+      <image>
+         <Image url="@../../Images/icons8-go-back-26 (2).png" />
+      </image>
+   </ImageView>
+</AnchorPane>

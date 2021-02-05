@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="680.0" prefWidth="1200.0" style="-fx-background-color: #000000;" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.Authentication.RegisterClass">
+    <children>
+      <ImageView fitHeight="680.0" fitWidth="1200.0" layoutX="-4.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../Images/registernew.png" />
+         </image>
+      </ImageView>
+        <TextField fx:id="txt_mail" layoutX="215.0" layoutY="270.0" prefHeight="35.0" prefWidth="220.0" promptText="Email" />
+        <TextField fx:id="txt_Name" layoutX="215.0" layoutY="344.0" prefHeight="35.0" prefWidth="220.0" promptText="Name" />
+        <TextField fx:id="txt_ID" layoutX="215.0" layoutY="175.0" prefHeight="35.0" prefWidth="220.0" promptText="Employee ID" />
+        <Button layoutX="830.0" layoutY="287.0" mnemonicParsing="false" onAction="#backButtonPress" prefHeight="44.0" prefWidth="126.0" style="-fx-background-color: #770404;" text="Go Back" textFill="#aaaaaa">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+         <font>
+            <Font name="System Bold" size="12.0" />
+         </font></Button>
+        <Button layoutX="289.0" layoutY="498.0" mnemonicParsing="false" onAction="#btn_Register" prefHeight="26.0" prefWidth="83.0" style="-fx-background-color: #770404;" text="Register" textFill="#fffdfd">
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor></Button>
+        <Label fx:id="errorLbl" accessibleRole="PASSWORD_FIELD" alignment="CENTER" contentDisplay="CENTER" layoutX="221.0" layoutY="557.0" prefHeight="27.0" prefWidth="207.0" text="Enter your mail and password" textAlignment="JUSTIFY" textFill="#aaaaaa" textOverrun="CENTER_ELLIPSIS" />
+        <PasswordField fx:id="txt_pass" layoutX="215.0" layoutY="436.0" prefHeight="35.0" prefWidth="220.0" promptText="Password" />
+      <ImageView fitHeight="26.0" fitWidth="29.0" layoutX="585.0" layoutY="242.0" pickOnBounds="true" preserveRatio="true" />
+      <Label layoutX="785.0" layoutY="224.0" prefHeight="35.0" prefWidth="325.0" text="Already registered? Go back to Login page" textFill="#acacac" />
+    </children>
+</AnchorPane>
